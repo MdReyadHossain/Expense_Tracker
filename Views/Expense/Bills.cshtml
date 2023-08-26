@@ -17,8 +17,10 @@
             <td>@i.FirstDate</td>
             <td>@i.EndDate</td>
             <td>@i.Expenditure</td>
-            <td><a class="btn btn-success" href="/Home/UserEdit/@i.Id">Edit</a></td>
-            <td><a class="btn btn-danger" href="/Home/UserDelete/@i.Id">Delete</a></td>
+            <td><a class="btn btn-success" href="/Expense/EditBill?id=@i.Id&name=@ViewBag.Bill&catagoryId=@ViewBag.BillId">Edit</a></td>
+            <td><a class="btn btn-danger" href="/Expense/DeleteBill/@i.Id">Delete</a></td>
         </tr>
     }
 </table>
+
+<a class="btn btn-primary" href="/Expense/AddBill?id=@ViewBag.BillId&name=@ViewBag.Bill">Add Bill +</a>

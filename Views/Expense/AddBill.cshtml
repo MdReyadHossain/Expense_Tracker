@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = @ViewBag.Name;
+}
+
+<h2>@ViewBag.Name</h2>
+
+@if (TempData["ErrMsg"] != null)
+{
+    <p class="alert alert-danger mx-5">@TempData["ErrMsg"]</p>
+}
+<form action="" method="post">
+    <input type="text" id="name" value="@ViewBag.Id" name="Catagory_Id" hidden />
+    <label for="FirstDate">Start Date:</label>
+    <input class="form-control" type="date" id="FirstDate" value="@(Model == null ? "" : Model.FirstDate)" name="FirstDate" placeholder="Date" />
+    <span class="text-danger">@Html.ValidationMessage("FirstDate")</span>
+    <br />
+    
+    <label for="EndDate">End Date:</label>
+    <input class="form-control" type="date" id="EndDate" value="@(Model == null ? "" : Model.EndDate)" name="EndDate" placeholder="Date" />
+    <span class="text-danger">@Html.ValidationMessage("EndDate")</span>
+    <br />
+
+    <label for="Expenditure">Expense:</label>
+    <input class="form-control" type="number" step="any" id="Expenditure" value="@(Model == null ? "" : Model.Expenditure)" name="Expenditure" placeholder="Amount in Taka" />
+    <span class="text-danger">@Html.ValidationMessage("Expenditure")</span>
+    <br />
+    <input type="submit" class="btn btn-success" /> <br />
+</form>

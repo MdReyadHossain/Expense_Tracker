@@ -3,7 +3,10 @@
 }
 
 <h2>Edit Catagory</h2>
-
+@if (TempData["ErrMsg"] != null)
+{
+    <p class="alert alert-danger mx-5">@TempData["ErrMsg"]</p>
+}
 <form action="" method="post">
     <input type="text" id="name" value="@Model.Id" name="Id" disabled hidden />
     <label for="name">Name:</label>

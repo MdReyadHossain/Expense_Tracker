@@ -1,17 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "AddCatagory";
+    ViewBag.Title = "Add Catagory";
 }
 
 <h2>Add Catagory</h2>
 @if (TempData["ErrMsg"] != null)
 {
-    <span class="alert alert-danger">@TempData["ErrMsg"]</span>
+    <p class="alert alert-danger mx-5">@TempData["ErrMsg"]</p>
 }
 <form action="" method="post">
     <input type="text" id="name" value="True" name="Status" disabled hidden />
     <label for="name">Name:</label>
-    <input class="form-control" type="text" id="name" value="@(Model == null ? "" : Model.Name)" name="Name" placeholder="Username" />
+    <input class="form-control" type="text" id="name" value="@(Model == null ? "" : Model.Name)" name="Name" placeholder="Name" />
     <span class="text-danger">@Html.ValidationMessage("Name")</span>
     <br />
     <input type="submit" class="btn btn-success" /> <br />
