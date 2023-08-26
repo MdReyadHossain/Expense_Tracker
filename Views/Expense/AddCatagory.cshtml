@@ -9,7 +9,7 @@
     <p class="alert alert-danger mx-5">@TempData["ErrMsg"]</p>
 }
 <form action="" method="post">
-    <input type="text" id="name" value="True" name="Status" disabled hidden />
+    <input type="checkbox" id="name" value="true" name="Status" checked hidden />
     <label for="name">Name:</label>
     <input class="form-control" type="text" id="name" value="@(Model == null ? "" : Model.Name)" name="Name" placeholder="Name" />
     <span class="text-danger">@Html.ValidationMessage("Name")</span>
