@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "AddCatagory";
+}
+
+<h2>Add Catagory</h2>
+@if (TempData["ErrMsg"] != null)
+{
+    <span class="alert alert-danger">@TempData["ErrMsg"]</span>
+}
+<form action="" method="post">
+    <input type="text" id="name" value="True" name="Status" disabled hidden />
+    <label for="name">Name:</label>
+    <input class="form-control" type="text" id="name" value="@(Model == null ? "" : Model.Name)" name="Name" placeholder="Username" />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+    <br />
+    <input type="submit" class="btn btn-success" /> <br />
+</form>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Bills";
+}
+
+<h2>@ViewBag.Bill</h2>
+
+<table class="table">
+    <tr>
+        <td>Start Data</td>
+        <td>End Data</td>
+        <td>Expense</td>
+        <th colspan="2">Action</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.FirstDate</td>
+            <td>@i.EndDate</td>
+            <td>@i.Expenditure</td>
+            <td><a class="btn btn-success" href="/Home/UserEdit/@i.Id">Edit</a></td>
+            <td><a class="btn btn-danger" href="/Home/UserDelete/@i.Id">Delete</a></td>
+        </tr>
+    }
+</table>
